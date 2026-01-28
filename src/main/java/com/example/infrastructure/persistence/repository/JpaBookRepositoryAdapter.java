@@ -1,14 +1,19 @@
 package com.example.infrastructure.persistence.repository;
 
-import com.example.domain.catalog.model.*;
-import com.example.domain.catalog.repository.BookRepository;
-import com.example.infrastructure.persistence.entity.BookJpaEntity;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.example.domain.catalog.model.Author;
+import com.example.domain.catalog.model.Book;
+import com.example.domain.catalog.model.BookId;
+import com.example.domain.catalog.model.Category;
+import com.example.domain.catalog.model.ISBN;
+import com.example.domain.catalog.repository.BookRepository;
+import com.example.infrastructure.persistence.entity.BookJpaEntity;
 
 /**
  * Adapter entre Domain Repository e JPA Repository

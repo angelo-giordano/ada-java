@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.api.request.BorrowBookRequest;
 import com.example.api.response.ErrorResponse;
 import com.example.application.catalog.command.BorrowBookCommand;
 import com.example.application.catalog.command.ReturnBookCommand;
@@ -97,6 +98,3 @@ public class LendingController {
         }
     }
 }
-
-// Request DTOs
-record BorrowBookRequest(String userId, String bookId) {}

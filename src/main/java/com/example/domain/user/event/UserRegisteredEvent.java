@@ -1,9 +1,10 @@
 package com.example.domain.user.event;
 
+import java.time.Instant;
+
+import com.example.domain.shared.event.DomainEvent;
 import com.example.domain.user.model.UserId;
 import com.example.domain.user.model.UserType;
-import com.example.domain.shared.event.DomainEvent;
-import java.time.Instant;
 
 /**
  * Evento: Usuário foi registrado

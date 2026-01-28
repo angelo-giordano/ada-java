@@ -1,8 +1,9 @@
 package com.example.domain.catalog.event;
 
+import java.time.Instant;
+
 import com.example.domain.catalog.model.BookId;
 import com.example.domain.shared.event.DomainEvent;
-import java.time.Instant;
 
 /**
  * Evento: Livro foi cadastrado

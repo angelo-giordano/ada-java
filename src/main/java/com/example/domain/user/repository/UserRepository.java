@@ -1,12 +1,13 @@
 package com.example.domain.user.repository;
 
-import com.example.domain.user.model.User;
-import com.example.domain.user.model.UserId;
-import com.example.domain.user.model.CPF;
-import com.example.domain.user.model.Email;
-import com.example.domain.user.model.UserType;
 import java.util.List;
 import java.util.Optional;
+
+import com.example.domain.user.model.CPF;
+import com.example.domain.user.model.Email;
+import com.example.domain.user.model.User;
+import com.example.domain.user.model.UserId;
+import com.example.domain.user.model.UserType;
 
 /**
  * Repository Interface para User

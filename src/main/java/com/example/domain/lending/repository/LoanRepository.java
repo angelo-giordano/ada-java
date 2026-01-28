@@ -1,13 +1,14 @@
 package com.example.domain.lending.repository;
 
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+
+import com.example.domain.catalog.model.BookId;
 import com.example.domain.lending.model.Loan;
 import com.example.domain.lending.model.LoanId;
 import com.example.domain.lending.model.LoanStatus;
 import com.example.domain.user.model.UserId;
-import com.example.domain.catalog.model.BookId;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
 
 /**
  * Repository Interface para Loan

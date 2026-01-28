@@ -1,11 +1,12 @@
 package com.example.infrastructure.persistence.repository;
 
-import com.example.infrastructure.persistence.entity.UserJpaEntity;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-import java.util.Optional;
+import com.example.infrastructure.persistence.entity.UserJpaEntity;
 
 /**
  * Spring Data JPA Repository para UserJpaEntity

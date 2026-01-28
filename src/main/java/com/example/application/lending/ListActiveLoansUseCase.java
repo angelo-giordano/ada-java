@@ -1,16 +1,17 @@
 package com.example.application.lending;
 
-import com.example.domain.lending.model.Loan;
-import com.example.domain.lending.repository.LoanRepository;
-import com.example.domain.catalog.model.Book;
-import com.example.domain.catalog.repository.BookRepository;
-import com.example.domain.user.model.User;
-import com.example.domain.user.model.UserId;
-import com.example.domain.user.repository.UserRepository;
-import com.example.application.dto.LoanDTO;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.example.application.dto.LoanDTO;
+import com.example.domain.catalog.model.Book;
+import com.example.domain.catalog.repository.BookRepository;
+import com.example.domain.lending.model.Loan;
+import com.example.domain.lending.repository.LoanRepository;
+import com.example.domain.user.model.User;
+import com.example.domain.user.model.UserId;
+import com.example.domain.user.repository.UserRepository;
 
 /**
  * Use Case: Listar empréstimos ativos de um usuário

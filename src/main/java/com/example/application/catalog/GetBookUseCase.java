@@ -1,10 +1,10 @@
 package com.example.application.catalog;
 
+import com.example.application.dto.BookDTO;
 import com.example.domain.catalog.model.Book;
 import com.example.domain.catalog.model.BookId;
 import com.example.domain.catalog.repository.BookRepository;
 import com.example.domain.shared.exception.NotFoundException;
-import com.example.application.dto.BookDTO;
 
 /**
  * Use Case: Buscar um livro por ID

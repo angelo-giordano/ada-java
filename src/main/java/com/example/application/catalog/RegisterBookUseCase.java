@@ -1,12 +1,16 @@
 package com.example.application.catalog;
 
-import com.example.domain.catalog.model.*;
-import com.example.domain.catalog.repository.BookRepository;
+import com.example.application.catalog.command.RegisterBookCommand;
+import com.example.application.dto.BookDTO;
 import com.example.domain.catalog.event.BookRegisteredEvent;
+import com.example.domain.catalog.model.Author;
+import com.example.domain.catalog.model.Book;
+import com.example.domain.catalog.model.BookId;
+import com.example.domain.catalog.model.Category;
+import com.example.domain.catalog.model.ISBN;
+import com.example.domain.catalog.repository.BookRepository;
 import com.example.domain.shared.event.DomainEventPublisher;
 import com.example.domain.shared.exception.BusinessRuleException;
-import com.example.application.dto.BookDTO;
-import com.example.application.catalog.command.RegisterBookCommand;
 
 /**
  * Use Case: Registrar um novo livro no catálogo

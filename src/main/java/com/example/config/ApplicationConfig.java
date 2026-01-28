@@ -1,14 +1,22 @@
 package com.example.config;
 
-import com.example.application.catalog.*;
-import com.example.application.lending.*;
-import com.example.application.user.*;
-import com.example.domain.catalog.repository.BookRepository;
-import com.example.domain.lending.repository.LoanRepository;
-import com.example.domain.user.repository.UserRepository;
-import com.example.domain.shared.event.DomainEventPublisher;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.example.application.catalog.GetBookUseCase;
+import com.example.application.catalog.ListBooksUseCase;
+import com.example.application.catalog.RegisterBookUseCase;
+import com.example.application.catalog.SearchBooksUseCase;
+import com.example.application.lending.BorrowBookUseCase;
+import com.example.application.lending.ListActiveLoansUseCase;
+import com.example.application.lending.ReturnBookUseCase;
+import com.example.application.user.GetUserUseCase;
+import com.example.application.user.ListUsersUseCase;
+import com.example.application.user.RegisterUserUseCase;
+import com.example.domain.catalog.repository.BookRepository;
+import com.example.domain.lending.repository.LoanRepository;
+import com.example.domain.shared.event.DomainEventPublisher;
+import com.example.domain.user.repository.UserRepository;
 
 /**
  * Configuração de Injeção de Dependências

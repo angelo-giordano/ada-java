@@ -1,10 +1,11 @@
 package com.example.application.user;
 
-import com.example.domain.user.model.User;
-import com.example.domain.user.repository.UserRepository;
-import com.example.application.dto.UserDTO;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.example.application.dto.UserDTO;
+import com.example.domain.user.model.User;
+import com.example.domain.user.repository.UserRepository;
 
 /**
  * Use Case: Listar todos os usuários

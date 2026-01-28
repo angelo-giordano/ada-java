@@ -1,17 +1,20 @@
 package com.example.infrastructure.persistence.repository;
 
-import com.example.domain.lending.model.*;
-import com.example.domain.lending.repository.LoanRepository;
-import com.example.domain.user.model.UserId;
-import com.example.domain.catalog.model.BookId;
-import com.example.infrastructure.persistence.entity.LoanJpaEntity;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.example.domain.catalog.model.BookId;
+import com.example.domain.lending.model.Loan;
+import com.example.domain.lending.model.LoanId;
+import com.example.domain.lending.model.LoanStatus;
+import com.example.domain.lending.repository.LoanRepository;
+import com.example.domain.user.model.UserId;
+import com.example.infrastructure.persistence.entity.LoanJpaEntity;
 
 /**
  * Adapter entre Domain Repository e JPA Repository

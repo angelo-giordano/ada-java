@@ -1,10 +1,11 @@
 package com.example.domain.catalog.repository;
 
+import java.util.List;
+import java.util.Optional;
+
 import com.example.domain.catalog.model.Book;
 import com.example.domain.catalog.model.BookId;
 import com.example.domain.catalog.model.ISBN;
-import java.util.List;
-import java.util.Optional;
 
 /**
  * Repository Interface para Book

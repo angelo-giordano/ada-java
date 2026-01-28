@@ -1,7 +1,8 @@
 package com.example.domain.catalog.model;
 
-import com.example.domain.shared.exception.BusinessRuleException;
 import java.util.Objects;
+
+import com.example.domain.shared.exception.BusinessRuleException;
 
 /**
  * Aggregate Root: Book

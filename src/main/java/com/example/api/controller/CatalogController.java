@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.api.request.RegisterBookRequest;
 import com.example.api.response.ErrorResponse;
 import com.example.application.catalog.GetBookUseCase;
 import com.example.application.catalog.ListBooksUseCase;
@@ -99,12 +100,3 @@ public class CatalogController {
         return ResponseEntity.ok(books);
     }
 }
-
-// Request DTOs
-record RegisterBookRequest(
-    String isbn,
-    String title,
-    String authorName,
-    String category,
-    int totalQuantity
-) {}

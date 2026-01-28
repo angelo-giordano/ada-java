@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.api.request.RegisterUserRequest;
 import com.example.api.response.ErrorResponse;
 import com.example.application.catalog.command.RegisterUserCommand;
 import com.example.application.dto.UserDTO;
@@ -82,11 +83,3 @@ public class UserController {
         return ResponseEntity.ok(users);
     }
 }
-
-// Request DTOs
-record RegisterUserRequest(
-    String name,
-    String email,
-    String cpf,
-    String userType
-) {}

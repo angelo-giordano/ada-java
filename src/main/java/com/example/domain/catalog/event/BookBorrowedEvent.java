@@ -1,34 +1,24 @@
-package com.example.domain.lending.event;
+package com.example.domain.catalog.event;
 
 import java.time.Instant;
-import java.time.LocalDate;
 
 import com.example.domain.catalog.model.BookId;
-import com.example.domain.lending.model.LoanId;
 import com.example.domain.shared.event.DomainEvent;
 import com.example.domain.user.model.UserId;
 
 /**
- * Evento: Empréstimo foi criado
+ * Evento: Livro foi emprestado (usado pelo contexto de catálogo)
  */
-public class LoanCreatedEvent implements DomainEvent {
+public class BookBorrowedEvent implements DomainEvent {
     
-    private final LoanId loanId;
     private final BookId bookId;
     private final UserId userId;
-    private final LocalDate dueDate;
     private final Instant occurredOn;
 
-    public LoanCreatedEvent(LoanId loanId, BookId bookId, UserId userId, LocalDate dueDate) {
-        this.loanId = loanId;
+    public BookBorrowedEvent(BookId bookId, UserId userId) {
         this.bookId = bookId;
         this.userId = userId;
-        this.dueDate = dueDate;
         this.occurredOn = Instant.now();
-    }
-
-    public LoanId getLoanId() {
-        return loanId;
     }
 
     public BookId getBookId() {
@@ -39,10 +29,6 @@ public class LoanCreatedEvent implements DomainEvent {
         return userId;
     }
 
-    public LocalDate getDueDate() {
-        return dueDate;
-    }
-
     @Override
     public Instant occurredOn() {
         return occurredOn;
@@ -50,11 +36,9 @@ public class LoanCreatedEvent implements DomainEvent {
 
     @Override
     public String toString() {
-        return "LoanCreatedEvent{" +
-                "loanId=" + loanId +
-                ", bookId=" + bookId +
+        return "BookBorrowedEvent{" +
+                "bookId=" + bookId +
                 ", userId=" + userId +
-                ", dueDate=" + dueDate +
                 ", occurredOn=" + occurredOn +
                 '}';
     }

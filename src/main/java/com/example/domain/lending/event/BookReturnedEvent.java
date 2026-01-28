@@ -1,11 +1,12 @@
 package com.example.domain.lending.event;
 
-import com.example.domain.lending.model.LoanId;
-import com.example.domain.catalog.model.BookId;
-import com.example.domain.shared.valueobject.Money;
-import com.example.domain.shared.event.DomainEvent;
 import java.time.Instant;
 import java.time.LocalDate;
+
+import com.example.domain.catalog.model.BookId;
+import com.example.domain.lending.model.LoanId;
+import com.example.domain.shared.event.DomainEvent;
+import com.example.domain.shared.valueobject.Money;
 
 /**
  * Evento: Livro foi devolvido

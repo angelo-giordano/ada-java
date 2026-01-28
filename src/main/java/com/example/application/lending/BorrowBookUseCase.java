@@ -1,22 +1,23 @@
 package com.example.application.lending;
 
-import com.example.domain.lending.model.*;
-import com.example.domain.lending.repository.LoanRepository;
-import com.example.domain.lending.policy.LoanPolicy;
-import com.example.domain.lending.event.LoanCreatedEvent;
+import java.time.LocalDate;
+
+import com.example.application.catalog.command.BorrowBookCommand;
+import com.example.application.dto.LoanDTO;
 import com.example.domain.catalog.model.Book;
 import com.example.domain.catalog.model.BookId;
 import com.example.domain.catalog.repository.BookRepository;
-import com.example.domain.user.model.User;
-import com.example.domain.user.model.UserId;
-import com.example.domain.user.repository.UserRepository;
+import com.example.domain.lending.event.LoanCreatedEvent;
+import com.example.domain.lending.model.Loan;
+import com.example.domain.lending.model.LoanId;
+import com.example.domain.lending.policy.LoanPolicy;
+import com.example.domain.lending.repository.LoanRepository;
 import com.example.domain.shared.event.DomainEventPublisher;
 import com.example.domain.shared.exception.BusinessRuleException;
 import com.example.domain.shared.exception.NotFoundException;
-import com.example.application.dto.LoanDTO;
-import com.example.application.catalog.command.BorrowBookCommand;
-import java.time.LocalDate;
-import java.util.List;
+import com.example.domain.user.model.User;
+import com.example.domain.user.model.UserId;
+import com.example.domain.user.repository.UserRepository;
 
 /**
  * Use Case: Emprestar um livro

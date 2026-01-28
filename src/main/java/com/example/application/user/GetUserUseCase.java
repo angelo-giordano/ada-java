@@ -1,10 +1,10 @@
 package com.example.application.user;
 
+import com.example.application.dto.UserDTO;
+import com.example.domain.shared.exception.NotFoundException;
 import com.example.domain.user.model.User;
 import com.example.domain.user.model.UserId;
 import com.example.domain.user.repository.UserRepository;
-import com.example.domain.shared.exception.NotFoundException;
-import com.example.application.dto.UserDTO;
 
 /**
  * Use Case: Buscar usuário por ID

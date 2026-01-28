@@ -9,5 +9,5 @@ public interface DomainEventSubscriber<T extends DomainEvent> {
     /**
      * Manipula o evento
      */
-    void handle(T event);
+    void handle(DomainEvent event);
 }

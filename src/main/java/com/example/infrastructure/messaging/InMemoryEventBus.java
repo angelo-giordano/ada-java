@@ -1,16 +1,17 @@
 package com.example.infrastructure.messaging;
 
-import com.example.domain.shared.event.DomainEvent;
-import com.example.domain.shared.event.DomainEventPublisher;
-import com.example.domain.shared.event.DomainEventSubscriber;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
+import com.example.domain.shared.event.DomainEvent;
+import com.example.domain.shared.event.DomainEventPublisher;
+import com.example.domain.shared.event.DomainEventSubscriber;
 
 /**
  * Implementação in-memory do Event Bus

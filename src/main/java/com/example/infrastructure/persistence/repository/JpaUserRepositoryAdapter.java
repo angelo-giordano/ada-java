@@ -1,14 +1,19 @@
 package com.example.infrastructure.persistence.repository;
 
-import com.example.domain.user.model.*;
-import com.example.domain.user.repository.UserRepository;
-import com.example.infrastructure.persistence.entity.UserJpaEntity;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.example.domain.user.model.CPF;
+import com.example.domain.user.model.Email;
+import com.example.domain.user.model.User;
+import com.example.domain.user.model.UserId;
+import com.example.domain.user.model.UserType;
+import com.example.domain.user.repository.UserRepository;
+import com.example.infrastructure.persistence.entity.UserJpaEntity;
 
 /**
  * Adapter entre Domain Repository e JPA Repository

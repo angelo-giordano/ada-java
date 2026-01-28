@@ -1,12 +1,13 @@
 package com.example.domain.lending.model;
 
-import com.example.domain.catalog.model.BookId;
-import com.example.domain.user.model.UserId;
-import com.example.domain.shared.valueobject.Money;
-import com.example.domain.shared.exception.BusinessRuleException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
+
+import com.example.domain.catalog.model.BookId;
+import com.example.domain.shared.exception.BusinessRuleException;
+import com.example.domain.shared.valueobject.Money;
+import com.example.domain.user.model.UserId;
 
 /**
  * Aggregate Root: Loan

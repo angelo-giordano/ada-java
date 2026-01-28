@@ -1,10 +1,11 @@
 package com.example.application.catalog;
 
-import com.example.domain.catalog.model.Book;
-import com.example.domain.catalog.repository.BookRepository;
-import com.example.application.dto.BookDTO;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.example.application.dto.BookDTO;
+import com.example.domain.catalog.model.Book;
+import com.example.domain.catalog.repository.BookRepository;
 
 /**
  * Use Case: Listar todos os livros

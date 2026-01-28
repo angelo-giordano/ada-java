@@ -1,10 +1,11 @@
 package com.example.domain.user.model;
 
-import com.example.domain.lending.policy.LoanPolicy;
-import com.example.domain.lending.policy.StudentLoanPolicy;
-import com.example.domain.lending.policy.ProfessorLoanPolicy;
-import com.example.domain.lending.policy.CommonLoanPolicy;
 import java.util.Objects;
+
+import com.example.domain.lending.policy.CommonLoanPolicy;
+import com.example.domain.lending.policy.LoanPolicy;
+import com.example.domain.lending.policy.ProfessorLoanPolicy;
+import com.example.domain.lending.policy.StudentLoanPolicy;
 
 /**
  * Aggregate Root: User
