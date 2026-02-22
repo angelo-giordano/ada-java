@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'api'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['api:420']
+  - job_name: 'nginx'
+    metrics_path: '/status'
+    scheme: https
+    tls_config:
+      insecure_skip_verify: true
+    static_configs:
+      - targets: ['nginx:443']
