@@ -1,7 +1,6 @@
 #!/bin/bash
 
-host="https://localhost/api"
-
+host="https://biblioteca-ada.com:30821/api"
 echo "Colocando Alguma carga pra ver"
 
 i=0

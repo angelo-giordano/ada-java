@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: biblioteca-api
+  name: biblioteca-api
+  namespace: biblioteca
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: biblioteca-api
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: biblioteca-api
+    spec:
+      containers:
+      - image: baall/biblioteca-ada:latest
+        name: biblioteca-api
+        ports:
+          - containerPort: 420
