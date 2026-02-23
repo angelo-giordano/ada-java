@@ -153,7 +153,8 @@ Os scripts estão em `scripts/docker/` e `scripts/k8s/`.
 | `rate-limit.sh <endpoint> <n>` | Rajada de `n` requisições | `HTTP 429` após estouro do burst |
 | `payload-size.sh` | Upload acima de 1 MB | `HTTP 413` |
 | `encoding.sh` | Header de compressão | `Content-Encoding: gzip` |
-| `cache.sh` | Cache de GET | Hit/miss em respostas consecutivas (apenas Docker) |
+| `cache.sh` | Cache de GET | `HIT`/`MISS` em requisições consecutivas (apenas Docker) |
+| `auth.sh <usuario> <senha>` | Basic auth no `/actuator` | `HTTP 401` sem credenciais, `HTTP 200` com (apenas Kubernetes) |
 
 ### Exemplos
 
