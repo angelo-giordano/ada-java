@@ -2,9 +2,9 @@
 
 endpoint=$1
 req_qt=$2
-host="https://biblioteca-ada.com:30821/api"
+host="https://localhost/api"
 
-echo "Testando o Rate Limit do Nginx"
+echo "Testando o Rate Limit"
 echo "Url: $host/$endpoint"
 
 for i in $(seq 1 $req_qt)

@@ -1,60 +1,3 @@
-apiVersion: gateway.envoyproxy.io/v1alpha1
-kind: HTTPRouteFilter
-metadata:
-  name: health-direct-response
-  namespace: biblioteca
-spec:
-  directResponse:
-    statusCode: 200
-    contentType: application/json
-    body:
-      type: Inline
-      inline: '{"status":"ok","component":"envoy"}'
----
-apiVersion: gateway.envoyproxy.io/v1alpha1
-kind: ClientTrafficPolicy
-metadata:
-  name: biblioteca-client-policy
-  namespace: biblioteca
-spec:
-  targetRefs:
-  - group: gateway.networking.k8s.io
-    kind: Gateway
-    name: gateway
-  connection:
-    bufferLimit: 1Mi
----
-apiVersion: gateway.networking.k8s.io/v1
-kind: HTTPRoute
-metadata:
-  name: biblioteca-route
-  namespace: biblioteca
-spec:
-  parentRefs:
-  - name: gateway
-    namespace: default
-  hostnames:
-  - biblioteca-ada.com
-  rules:
-  - matches:
-    - path:
-        type: Exact
-        value: /health
-    filters:
-    - type: ExtensionRef
-      extensionRef:
-        group: gateway.envoyproxy.io
-        kind: HTTPRouteFilter
-        name: health-direct-response
-
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /actuator/health
-    backendRefs:
-    - name: biblioteca-svc
-      port: 80
----
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
@@ -67,7 +10,8 @@ spec:
   hostnames:
   - biblioteca-ada.com
   rules:
-  - matches:
+  - name: api
+    matches:
     - path:
         type: PathPrefix
         value: /api
@@ -84,29 +28,19 @@ spec:
     backendRefs:
     - name: biblioteca-svc
       port: 80
+  - name: actuator
+    matches:
+    - path:
+        type: PathPrefix
+        value: /actuator
+    backendRefs:
+    - name: biblioteca-svc
+      port: 80
 ---
 apiVersion: gateway.envoyproxy.io/v1alpha1
-kind: BackendTrafficPolicy
+kind: BackendTrafficPolicy 
 metadata:
-  name: actuator-traffic-policy
-  namespace: biblioteca
-spec:
-  targetRefs:
-  - group: gateway.networking.k8s.io
-    kind: HTTPRoute
-    name: biblioteca-route
-  rateLimit:
-    type: Local
-    local:
-      rules:
-      - limit:
-          requests: 5
-          unit: Second
----
-apiVersion: gateway.envoyproxy.io/v1alpha1
-kind: BackendTrafficPolicy
-metadata:
-  name: api-traffic-policy
+  name: biblioteca-policy-route
   namespace: biblioteca
 spec:
   targetRefs:
@@ -114,9 +48,28 @@ spec:
     kind: HTTPRoute
     name: biblioteca-api-route
   rateLimit:
-    type: Local
     local:
       rules:
-      - limit:
-          requests: 5
-          unit: Second
+        - limit:
+            requests: 5
+            unit: Second
+  requestBuffer:
+    limit: 1Mi
+  compressor:
+    - type: Gzip
+      gzip: {}
+---
+apiVersion: gateway.envoyproxy.io/v1alpha1
+kind: SecurityPolicy
+metadata:
+  name: basic-auth
+  namespace: biblioteca
+spec:
+  targetRefs:
+    - group: gateway.networking.k8s.io
+      kind: HTTPRoute
+      name: biblioteca-api-route
+      sectionName: actuator
+  basicAuth:
+    users:
+      name: "basic-auth"

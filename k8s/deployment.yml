@@ -6,7 +6,7 @@ metadata:
   name: biblioteca-api
   namespace: biblioteca
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: biblioteca-api
@@ -19,5 +19,18 @@ spec:
       containers:
       - image: baall/biblioteca-ada:latest
         name: biblioteca-api
+        livenessProbe:
+          httpGet: 
+            path: /actuator/health/livenessState
+            port: 420
+        readinessProbe:
+          httpGet: 
+            path: /actuator/health/readinessState
+            port: 420
         ports:
           - containerPort: 420
+        resources:
+          limits:
+            memory: 500Mi
+          requests:
+            memory: 500Mi

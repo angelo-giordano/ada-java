@@ -1,0 +1,4 @@
+nginx/certs/biblioteca*
+.htpasswd
+grafana-dashs.yml
+Geral.json
