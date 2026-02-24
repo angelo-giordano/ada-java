@@ -19,6 +19,7 @@ spec:
       containers:
       - image: baall/biblioteca-ada:latest
         name: biblioteca-api
+        imagePullPolicy: Always
         livenessProbe:
           httpGet: 
             path: /actuator/health/livenessState

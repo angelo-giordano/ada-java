@@ -2,3 +2,4 @@ docker/nginx/certs/biblioteca*
 .htpasswd
 grafana-dashs.yml
 Geral.json
+scripts/k8s/geral.sh

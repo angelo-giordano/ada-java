@@ -15,7 +15,7 @@ spec:
         - format:
             type: Text
             text: |
-              [%START_TIME%] "%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %PROTOCOL%" %RESPONSE_CODE% %DURATION%ms "%REQ(X-FORWARDED-FOR)%" "%REQ(X-REQUEST-ID)%" "%UPSTREAM_HOST%"
+              [%START_TIME%] "%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %PROTOCOL%" %RESPONSE_CODE% %DURATION%ms "%REQ(X-FORWARDED-FOR)%" "%REQ(X-REQUEST-ID)%" "%UPSTREAM_HOST%" x-content-type-options=%RESP(X-CONTENT-TYPE-OPTIONS)% x-frame-options=%RESP(X-FRAME-OPTIONS)% x-xss-protection=%RESP(X-XSS-PROTECTION)% content-encoding=%RESP(CONTENT-ENCODING)%
           sinks:
             - type: File
               file:
