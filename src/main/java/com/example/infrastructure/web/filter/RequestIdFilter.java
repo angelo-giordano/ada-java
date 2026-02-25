@@ -10,7 +10,7 @@ import java.io.IOException;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class RequestIdFilter implements Filter {
 
-    private static final String REQUEST_ID_HEADER = "x-request-id";
+    private static final String REQUEST_ID_HEADER = "X-Request-Id";
     private static final String MDC_KEY = "requestId";
 
     @Override
@@ -27,7 +27,7 @@ public class RequestIdFilter implements Filter {
         try {
             chain.doFilter(request, response);
         } finally {
-            MDC.remove(MDC_KEY); // always clean up!
+            MDC.remove(MDC_KEY);
         }
     }
 }

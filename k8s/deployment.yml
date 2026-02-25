@@ -20,6 +20,9 @@ spec:
       - image: baall/biblioteca-ada:latest
         name: biblioteca-api
         imagePullPolicy: Always
+        env:
+          - name: JAVA_OPTS
+            value: "-Xms64m -Xmx64m"
         livenessProbe:
           httpGet: 
             path: /actuator/health/livenessState
